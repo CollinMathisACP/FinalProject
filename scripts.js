@@ -17,6 +17,7 @@ var margins = {top:10, right:50, bottom:50, left:50};
 
 var setupStackedBarCharts = function()
 {        
+    
     screen.height = 600;
     screen.width = 400;
     d3.select("svg").style("left", "25%")
@@ -54,6 +55,8 @@ var setupStackedBarCharts = function()
 
 var drawStackedBarCharts = function(xScale, yScale)
 {
+    console.log(d3.select(".legend"))
+    
     var war = [
     {12: 10.5, 13:9.0, 14:7.6, 15:9.4, 16:10.4, 17:6.6, 18:10.2, 19:8.3},
     {12: 5.2, 13:3.7, 14:1.1, 15:10.0, 16:1.5, 17:4.6, 18:1.3, 19:4.2}
@@ -107,7 +110,7 @@ var drawStackedBarCharts = function(xScale, yScale)
         counter = 1;
         setupXToYScatterPlot(avg, 0.2, 0.370, year)
     })
-        
+    
 }
 
 var setupXToYScatterPlot = function(data, x, y, year)
@@ -211,6 +214,10 @@ var drawXToYScatterPlot = function(data, xScale, yScale, year)
         {return "blue";}
     });
     
+    d3.select("body").select(".legend").remove();
+    d3.select("body").select("#troutLegend").remove()
+    d3.select("body").select("#harperLegend").remove()
+    
     var legend = d3.select("body").append("svg").attr("class", "legend");
     var troutRect = legend.append("rect").attr("id", "troutRect");
     troutRect.attr("x", 150);
@@ -242,14 +249,14 @@ var addButtons = function()
     
     menu.append("h3").text("Initial WAR Chart:")
     menu.append("button").attr("id", "initial").text(" WAR").on("click", function(){
-        d3.select("body").append("h3").attr("id", "troutLabel").text("Trout")
-        d3.select("body").append("h3").attr("id", "harperLabel").text("Harper")
-        d3.select("body").append("img").attr("id", "angels").attr("src", "angels.jpg")
-        d3.select("body").append("img").attr("id", "phillies").attr("src", "phillies.png")
         d3.select("body").select(".legend").remove();
         d3.select("body").select("#troutLegend").remove()
         d3.select("body").select("#harperLegend").remove()
         d3.select("body").select(".menu").remove()
+        d3.select("body").append("h3").attr("id", "troutLabel").text("Trout")
+        d3.select("body").append("h3").attr("id", "harperLabel").text("Harper")
+        d3.select("body").append("img").attr("id", "angels").attr("src", "angels.jpg")
+        d3.select("body").append("img").attr("id", "phillies").attr("src", "phillies.png")
         buttonsDone = false;
         d3.select("#subTitle").text("Wins Above Replacement")
         d3.select("#subTitle").style("left", "32%")
