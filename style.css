@@ -18,3 +18,85 @@
 {
     visibility: hidden;
 }
+
+svg
+{
+    position: absolute;
+    width: 33%;
+    left: 25%;
+    top: 15%
+}
+
+.menu
+{
+    position: absolute;    
+    right: 15%;
+    top: 15%
+}
+
+#title
+{
+    position: absolute;
+    width: 33%;
+    left: 27%;
+}
+
+#subTitle
+{
+    position: absolute;
+    width: 33%;
+    left: 32%;
+    top: 6%
+}
+
+#troutLabel
+{
+    position: absolute;
+    top: 660;
+    left: 28%;
+}
+
+#harperLabel
+{
+    position: absolute;
+    top: 660;
+    left: 47.2%;
+}
+
+#angels
+{
+    position: relative;
+    left: 5;
+}
+
+#phillies
+{
+    position: relative;
+    left: 550;
+}
+
+#troutRect
+{
+    position: absolute;
+    left: 200
+}
+
+.legend
+{
+    position: absolute;
+    left: 0;
+}
+
+#troutLegend
+{
+    position: absolute;
+    left: 180;
+    top: 92;
+}
+
+#harperLegend
+{
+    position: absolute;
+    left: 180;
+    top: 145;
+}
