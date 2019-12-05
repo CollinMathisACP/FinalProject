@@ -54,9 +54,7 @@ var setupStackedBarCharts = function()
 }
 
 var drawStackedBarCharts = function(xScale, yScale)
-{
-    console.log(d3.select(".legend"))
-    
+{    
     var war = [
     {12: 10.5, 13:9.0, 14:7.6, 15:9.4, 16:10.4, 17:6.6, 18:10.2, 19:8.3},
     {12: 5.2, 13:3.7, 14:1.1, 15:10.0, 16:1.5, 17:4.6, 18:1.3, 19:4.2}
